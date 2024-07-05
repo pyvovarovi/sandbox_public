@@ -1,3 +1,6 @@
+SHOW IMPORTED KEYS IN DB_NAME.SCHEMA_NAME.TABLE_NAME ;
+SHOW PRIMARY KEYS IN DB_NAME.SCHEMA_NAME.TABLE_NAME;
+-- =============================================================
 SELECT 
     c.table_name, 
     c.column_name 
