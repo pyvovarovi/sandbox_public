@@ -53,3 +53,58 @@ Increased technical debt, making future migrations difficult.
 Example:
 
 Migrating only customer profile data to PostgreSQL while keeping order and transaction history in SAP HANA, making it impossible to generate unified reports without multiple manual queries.
+=============================================================================================================================================================================================================
+1. Low Deviation (Minor impact, aligns with strategy)
+Scenario:
+
+A company is migrating from Oracle (hosted in AWS RDS) to Snowflake.
+Most tables are migrated to Snowflake, but some lookup/reference tables are kept as local copies in an Azure SQL Database for a specific reporting tool that is not yet connected to Snowflake.
+These tables are small, read-only, and synchronized nightly.
+Justification:
+
+No major impact on performance, security, or maintainability.
+Temporary workaround that aligns with the long-term migration plan.
+Example:
+
+Keeping a local copy of a "Currency Exchange Rates" table in Azure SQL while the full dataset is in Snowflake.
+2. Moderate Deviation (Some risks, but manageable)
+Scenario:
+
+Migrating from SQL Server on AWS to Snowflake in Azure.
+Most operational tables are migrated, but some high-frequency transactional tables remain in an Azure SQL Database, as certain applications cannot yet be refactored to query Snowflake.
+A data pipeline refreshes Snowflake every 15 minutes with the latest updates.
+Justification:
+
+Some data latency risks but acceptable for near real-time reporting.
+Added complexity in managing two databases, but a clear migration roadmap exists.
+Example:
+
+Keeping real-time customer orders in Azure SQL while migrating historical orders to Snowflake.
+3. High Deviation (Significant risk, requires strong justification)
+Scenario:
+
+Migrating from DB2 on IBM Cloud to Google BigQuery, but financial transaction tables remain in Azure SQL due to dependencies with an external payment gateway.
+Multiple ETL jobs run hourly to keep data synchronized, but integrity issues arise due to delayed updates across systems.
+Some applications query both databases separately, leading to complex join operations.
+Justification:
+
+Increased risk of inconsistent data between systems.
+High operational overhead in managing multiple sync jobs.
+Future scalability concerns if not fully migrated.
+Example:
+
+Keeping customer payments and refunds in Azure SQL while customer and order data are in BigQuery, leading to challenges in unified reporting.
+4. Critical Deviation (Severe misalignment, strong risk)
+Scenario:
+
+A company plans to migrate from SAP HANA (hosted on Azure) to Snowflake, but only a subset of analytical tables are migrated.
+The majority of critical operational tables (customer, orders, inventory, transactions) remain in Azure SQL, with no structured data synchronization.
+Applications must query both systems independently, leading to fragmented data access and performance bottlenecks.
+Justification:
+
+No clear data governance strategy, making it impossible to maintain a single source of truth.
+Performance and security risks due to multiple, unstructured queries between databases.
+High risk of project failure due to incomplete migration.
+Example:
+
+Migrating only aggregated sales data to Snowflake while detailed transactions, customer records, and invoices remain in Azure SQL, making it impossible to generate unified reports without complex and inefficient cross-database queries.
