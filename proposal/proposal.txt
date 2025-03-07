@@ -160,6 +160,39 @@ Justification: The deviation is severe when it affects core transactional data t
 
 Example: A customer orders table, which contains live transactional data, is available only as a local copy in the cloud without any automated synchronization. This can result in order duplication, billing errors, and fulfillment delays, directly jeopardizing business integrity and regulatory compliance.
 =============================================================================================================================================================================================================
+# Deviation from divisional target state architecture
+
+1. Low Deviation
+
+Justification: A minor deviation that does not substantially impact the alignment with the divisional target state architecture. This could be a temporary workaround or a non-essential component that does not alter the overall system design, security standards, or performance goals.
+
+Example: Some non-critical tables, such as historical data or archived logs, are temporarily stored as local copies in the cloud while waiting for full migration. This does not affect the integrity or scalability of the core cloud architecture and can be resolved in the next phase of migration.
+
+Impact on Target Architecture: The deviation has minimal to no long-term impact on the divisional target state architecture, as it’s a temporary arrangement to keep the system running while waiting for full migration.
+
+2. Moderate Deviation
+
+Justification: A moderate deviation where elements deviate from the target state architecture, but the system still functions with manageable performance impacts. While the deviation affects some functionality, it does not compromise critical system components or security standards.
+
+Example: Reporting tables and less-critical transactional tables are split between the on-premises environment and cloud-based local copies, causing some performance issues when cross-referencing. Data synchronization between the two environments adds slight latency to reporting processes, but operations continue without major service disruptions.
+
+Impact on Target Architecture: The architecture is somewhat disrupted, but the issue is contained and manageable. There is a delay in fully achieving the divisional target state, but no core functions are affected.
+
+3. High Deviation
+
+Justification: A significant deviation where key elements of the target architecture are not properly implemented, affecting performance, security, or functionality. The deviation may lead to inefficiencies or compliance issues and will require immediate corrective action to align with the divisional target state.
+
+Example: Critical tables that support core transactional processes or real-time analytics remain as local copies in the cloud, leading to slow data access and integration issues between cloud and local copies. This causes delays in processing high-priority operations and may introduce data consistency issues, which affect business processes.
+
+Impact on Target Architecture: The deviation significantly hampers the architecture’s intended performance and scalability goals. It deviates from the target state, as a cloud-first design was the goal. Corrective action is required to migrate these critical tables to the cloud for proper data centralization and efficiency.
+
+4. Critical Deviation
+
+Justification: A critical deviation where fundamental components of the target architecture are not met, creating substantial risks for system stability, security, or business continuity. This level requires immediate action and remediation to align the system with the divisional target state.
+
+Example: Core application tables that are essential for processing business transactions and ensuring data consistency are left as local copies in the cloud. This results in a major system failure or an outage due to failed data synchronization between the cloud and the local copies, preventing access to critical business data. This could also lead to security vulnerabilities or data integrity issues.
+
+Impact on Target Architecture: The deviation represents a critical breach of the target architecture’s principles, as the cloud architecture is not fully realized. The deviation poses immediate risks to operational continuity, data integrity, and compliance, requiring urgent resolution.
 =============================================================================================================================================================================================================
 =============================================================================================================================================================================================================
 =============================================================================================================================================================================================================
