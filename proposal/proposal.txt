@@ -228,5 +228,30 @@ Example: Entire sets of critical operational tables (e.g., payroll, financial re
 Impact: Complete breakdown of business-critical functions, causing major operational disruption and potential financial or legal risks. Immediate remediation is necessary to restore the system’s functionality.
 
 =============================================================================================================================================================================================================
+###  IT technology dependency
+
+1. Low IT Technology Dependency
+
+Justification: In this level, technology plays a minimal role in business processes. Migration to the cloud might be happening, but the systems or data involved aren’t critical to the core business functions. Any disruption or delay in migrating these tables won’t impact day-to-day operations significantly.
+
+Example: A set of reference data or archive tables (e.g., historical reports, logs, or non-sensitive data) are migrated to the cloud, while some of the tables (like those with older data that is infrequently accessed) remain in local copies. Since this data isn’t actively used in real-time operations, the dependency on the cloud is low.
+
+2. Moderate IT Technology Dependency
+
+Justification: Technology is more involved in core processes, but these processes can tolerate some disruptions or delays. Some local data tables might still be used temporarily as the migration continues, and business operations might see slight inefficiencies or delays. While it’s important, the business can adapt to short-term issues without major setbacks.
+
+Example: Customer data for analysis or inventory levels are partially migrated to the cloud, but some critical tables like inventory quantities remain local. The cloud-based system updates regularly, but because the local data might not be in sync, there could be minor delays in fulfilling orders or slightly outdated inventory numbers. Operations can continue, but the lack of full integration will cause minor inefficiencies.
+
+3. High IT Technology Dependency
+
+Justification: At this level, technology is crucial to most business processes, and any interruptions in the integration of cloud and local data will have a tangible impact. Key business functions are affected, and although the business can still operate, it risks significant delays or data inaccuracies, which may affect customer experience, revenue, or productivity.
+
+Example: In this case, essential transactional data such as customer orders, product availability, or financial transactions is being migrated. Some tables remain local (such as real-time order status updates or financial logs). If this local data is not synchronized properly with the cloud, it could result in delays in processing customer orders or even lead to errors in billing. The business is still functional but faces risk due to inconsistency in critical data between the cloud and local storage.
+
+4. Critical IT Technology Dependency
+
+Justification: At this level, the entire business hinges on the proper and seamless functioning of technology. If migration is incomplete or data is inconsistent between local and cloud environments, it can bring down core business processes, causing financial, operational, or compliance-related consequences. Full migration and real-time integration are necessary for business continuity.
+
+Example: Core systems like order processing, real-time customer management, and financial operations rely heavily on up-to-date data from the cloud. Local copies of key transactional tables (such as current customer orders, inventory levels, or real-time accounting data) are critical for processing transactions smoothly. If the migration is incomplete or cloud data isn’t integrated seamlessly with the local copies, it could result in a halt in customer orders, financial reporting failures, or major service disruptions. This level of dependency would jeopardize the business’s ability to operate efficiently and comply with regulations.
 =============================================================================================================================================================================================================
 =============================================================================================================================================================================================================
