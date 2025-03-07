@@ -135,6 +135,7 @@ Justification:
 For core operational data, divisional architecture principles mandate immediate consistency and real‑time integration. Relying solely on a local copy for transactional data poses severe risks—such as order duplication, billing errors, or compliance breaches—that could jeopardize the entire business operation. This critical deviation demands urgent remediation to restore full alignment with the divisional principles.
 
 =============================================================================================================================================================================================================
+### deviation from divisional architecture 
 Low Deviation ---------------
 
 Justification: The deviation is minor because it involves data that is non-essential to real‑time operations and does not compromise the overall integrity or consistency demanded by the divisional architecture principles. Such data typically serves historical or archival purposes where strict real‑time integration is not required.
