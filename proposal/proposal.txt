@@ -1,1 +1,55 @@
-.
+1. Low Deviation (Minor impact, aligns with strategy)
+Scenario:
+
+A company is migrating from Oracle to PostgreSQL.
+Most tables are migrated, but some small lookup/reference tables are kept locally in an application’s embedded SQLite database for faster access.
+These local copies are read-only and synchronized periodically from the PostgreSQL database.
+Justification:
+
+No impact on data integrity or system performance.
+The approach is within best practices and doesn’t introduce complexity.
+Example:
+
+Keeping a local copy of a "Country Codes" table in an application database for quick lookups while the primary data resides in PostgreSQL
+
+2. Moderate Deviation (Some risks, but manageable)
+Scenario:
+
+Migrating from Sybase ASE to Microsoft SQL Server.
+Most transactional tables are migrated, but a subset of reporting tables is retained in Sybase for legacy applications.
+An ETL job refreshes the SQL Server data, but reports generated from Sybase may have slight delays.
+Justification:
+
+Some data latency risks, but acceptable for non-real-time reporting.
+Requires additional maintenance for synchronization.
+Example:
+
+Keeping historical sales reports in Sybase while migrating real-time sales transactions to SQL Server.
+3. High Deviation (Significant risk, requires strong justification)
+Scenario:
+
+Migrating from DB2 to MySQL for cost efficiency.
+Key operational tables are migrated, but some financial transaction tables remain in DB2 due to third-party integrations.
+Multiple complex data movement scripts are required to ensure consistency.
+Justification:
+
+Increased complexity and operational overhead.
+Higher risk of data inconsistency between databases.
+Might cause issues in reconciliation and reporting.
+Example:
+
+Keeping invoices and payment transactions in DB2 while migrating customer and order data to MySQL, leading to complex joins across databases.
+4. Critical Deviation (Severe misalignment, strong risk)
+Scenario:
+
+Migrating from SAP HANA to PostgreSQL, but only a small subset of tables is moved.
+The majority of business-critical tables (e.g., customer, orders, payments) remain in SAP HANA with no structured synchronization process.
+Applications must query both databases separately, leading to fragmented data access and poor performance.
+Justification:
+
+High operational risk due to lack of integration.
+No clear data governance strategy.
+Increased technical debt, making future migrations difficult.
+Example:
+
+Migrating only customer profile data to PostgreSQL while keeping order and transaction history in SAP HANA, making it impossible to generate unified reports without multiple manual queries.
