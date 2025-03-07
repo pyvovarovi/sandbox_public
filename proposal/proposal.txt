@@ -108,3 +108,35 @@ High risk of project failure due to incomplete migration.
 Example:
 
 Migrating only aggregated sales data to Snowflake while detailed transactions, customer records, and invoices remain in Azure SQL, making it impossible to generate unified reports without complex and inefficient cross-database queries.
+=============================================================================================================================================================================================================
+Low Deviation
+
+Example:
+An archival table containing historical audit logs is migrated as a local copy in the cloud.
+Justification:
+The divisional principles emphasize integrated, up‑to‑date operational data. However, since audit logs are used solely for historical compliance and rarely impact live operations, keeping them as a local copy is an acceptable minor deviation. The limited operational impact justifies this approach.
+Moderate Deviation
+
+Example:
+A configuration table (storing application settings or metadata) is maintained as a local copy with scheduled nightly updates instead of real‑time synchronization.
+Justification:
+Divisional architecture principles call for timely, consistent data for smooth operations. Although configuration data ideally should be integrated, the infrequent changes and low criticality mean that a scheduled update introduces only a slight delay. The moderate deviation is justified by the low risk of impacting system performance while still maintaining overall functional alignment.
+High Deviation
+
+Example:
+A key lookup table (such as part of a product catalog) is migrated as a local copy without real‑time synchronization, leading to occasional data mismatches between the cloud and integrated systems.
+Justification:
+Divisional principles require unified, real‑time data across divisions to support critical business processes. The lack of synchronization here causes significant discrepancies that can affect decision‑making and customer-facing operations. This level of deviation is high because the inconsistency directly challenges the principle of integrated, consistent data—prompting the need for corrective measures.
+Critical Deviation
+
+Example:
+A core transactional table (holding live customer orders or financial transactions) is available only as a static local copy in the cloud with no automated synchronization mechanism.
+Justification:
+For core operational data, divisional architecture principles mandate immediate consistency and real‑time integration. Relying solely on a local copy for transactional data poses severe risks—such as order duplication, billing errors, or compliance breaches—that could jeopardize the entire business operation. This critical deviation demands urgent remediation to restore full alignment with the divisional principles.
+
+=============================================================================================================================================================================================================
+=============================================================================================================================================================================================================
+=============================================================================================================================================================================================================
+=============================================================================================================================================================================================================
+=============================================================================================================================================================================================================
+=============================================================================================================================================================================================================
