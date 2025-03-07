@@ -135,6 +135,29 @@ Justification:
 For core operational data, divisional architecture principles mandate immediate consistency and real‑time integration. Relying solely on a local copy for transactional data poses severe risks—such as order duplication, billing errors, or compliance breaches—that could jeopardize the entire business operation. This critical deviation demands urgent remediation to restore full alignment with the divisional principles.
 
 =============================================================================================================================================================================================================
+Low Deviation ---------------
+
+Justification: The deviation is minor because it involves data that is non-essential to real‑time operations and does not compromise the overall integrity or consistency demanded by the divisional architecture principles. Such data typically serves historical or archival purposes where strict real‑time integration is not required.
+
+Example: An archival table for historical audit logs is migrated as a local copy in the cloud. Since these logs are only used for periodic compliance reviews and do not impact daily operations, this deviation is minimal.
+
+Moderate Deviation ------------------------
+
+Justification: The deviation is noticeable but limited to supporting or configuration data that changes infrequently. Although divisional architecture principles call for integrated and up‑to‑date data, the delay in synchronization for non-critical data introduces only a minor risk, which is acceptable given its low impact on operational performance.
+
+Example: A configuration table (storing application settings and metadata) is maintained as a local copy in the cloud and synchronized on a nightly basis. The slight delay is acceptable because these settings rarely change and do not disrupt the core functionality.
+
+High Deviation -----------------------
+
+Justification: The deviation is significant when it involves data that is integral to supporting key business processes. Divisional architecture principles expect consistent, real‑time data flow; any delay or isolation in such data can lead to noticeable inconsistencies and misalignments, which could impact decision‑making and operational effectiveness.
+
+Example: A key lookup table for a product catalog is migrated as a local copy without real‑time updates. This leads to occasional mismatches in product details across integrated systems, affecting inventory management and customer-facing applications—an outcome that significantly deviates from the intended architectural consistency.
+
+Critical Deviation ----------------------
+
+Justification: The deviation is severe when it affects core transactional data that drives real‑time business operations and compliance. Divisional architecture principles mandate full integration and immediate synchronization for such data. Failing to meet these standards poses immediate operational, financial, and regulatory risks, requiring urgent corrective action.
+
+Example: A customer orders table, which contains live transactional data, is available only as a local copy in the cloud without any automated synchronization. This can result in order duplication, billing errors, and fulfillment delays, directly jeopardizing business integrity and regulatory compliance.
 =============================================================================================================================================================================================================
 =============================================================================================================================================================================================================
 =============================================================================================================================================================================================================
