@@ -254,4 +254,29 @@ Justification: At this level, the entire business hinges on the proper and seaml
 
 Example: Core systems like order processing, real-time customer management, and financial operations rely heavily on up-to-date data from the cloud. Local copies of key transactional tables (such as current customer orders, inventory levels, or real-time accounting data) are critical for processing transactions smoothly. If the migration is incomplete or cloud data isn’t integrated seamlessly with the local copies, it could result in a halt in customer orders, financial reporting failures, or major service disruptions. This level of dependency would jeopardize the business’s ability to operate efficiently and comply with regulations.
 =============================================================================================================================================================================================================
+####  Economic impact, internal technology investment.
+
+1. Low
+Justification: The economic impact and investment are minimal because the scope of migration involves small, non-critical datasets, and minimal resources are allocated. The cost to the organization is low, and the integration does not disrupt major business operations.
+Example: Migrating a small table, such as a non-essential archive or log data, to the cloud. Some tables remain locally stored without any significant integration effort. The cost of cloud storage and migration is minimal, and the business does not see a noticeable impact from this migration.
+Economic Impact: Low, as there is no substantial change to business processes or outcomes.
+Internal Technology Investment: Low, as minimal cloud resources and integration tools are required.
+
+2. Moderate
+Justification: The economic impact and investment increase as the migration starts to involve more data that is important for business operations but not critical. The integration requires more resources, tools, and coordination, but it doesn't heavily disrupt business continuity.
+Example: Migrating moderately important tables like customer data or product catalogs to the cloud. Some tables are kept on-prem for compatibility or performance reasons. The migration is significant enough to require moderate cloud storage and integration efforts, but the business can still function with minimal disruption.
+Economic Impact: Moderate, as it impacts certain operations and requires more cloud services, but core business functions are not heavily affected.
+Internal Technology Investment: Moderate, due to the need for integration tools, cloud storage, and additional resources to handle the migration.
+
+3. High
+Justification: The economic impact and investment are substantial because the migration involves critical data, and the integration complexity is higher. The organization requires a larger cloud infrastructure investment, and the project could have a noticeable impact on daily operations, necessitating careful planning and execution.
+Example: Migrating important transactional data, such as sales records or inventory data, to the cloud while maintaining some real-time tables locally. The migration requires high investment in cloud storage, data integration platforms, and possibly custom cloud-native solutions to ensure data synchronization between the cloud and local systems.
+Economic Impact: High, as it significantly affects the efficiency of operations and could influence revenue-generating activities.
+Internal Technology Investment: High, as it requires significant cloud resources, sophisticated integration tools, and the alignment of internal teams for execution.
+
+4. Critical
+Justification: The economic impact and internal investment are critical because the migration involves mission-critical data that drives essential business functions. Any issues in migration could lead to serious operational disruptions, impacting revenue and customer experience. The organization needs to allocate substantial resources to ensure success, and the financial impact is large.
+Example: Migrating all core operational data, such as financial transactions or customer order histories, to the cloud. No data will remain on-prem, and all services are fully cloud-dependent. The integration needs to be flawless, with strong data consistency, security, and low latency, as any failures could lead to significant downtime or data loss.
+Economic Impact: Critical, as it affects the core business operations and financial performance. Failure could result in major financial losses.
+Internal Technology Investment: Critical, requiring a full-scale investment in cloud infrastructure, enterprise-level integration tools, high availability solutions, and potentially specialized teams or external vendors to ensure the migration’s success.
 =============================================================================================================================================================================================================
