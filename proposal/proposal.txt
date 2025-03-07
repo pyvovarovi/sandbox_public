@@ -194,6 +194,39 @@ Example: Core application tables that are essential for processing business tran
 
 Impact on Target Architecture: The deviation represents a critical breach of the target architecture’s principles, as the cloud architecture is not fully realized. The deviation poses immediate risks to operational continuity, data integrity, and compliance, requiring urgent resolution.
 =============================================================================================================================================================================================================
+### architecture-related policy violation
+
+1. Low
+
+Justification: A minor deviation from the architecture-related policy, often related to scheduling or non-critical data elements. The deviation has minimal impact on the overall system architecture, and the cloud integration can still function without significant issues.
+
+Example: The migration plan deviates from the original target architecture because a few historical or reference tables have not yet been migrated to the cloud. These tables are not essential for real-time operations or business processes and can be handled by temporary local copies in the cloud.
+
+Impact: No immediate system impact; temporary solution in place to maintain functionality.
+2. Moderate
+
+Justification: A moderate deviation occurs when there’s a misalignment with the architecture policy that impacts integration or operational processes. The deviation could be related to a critical group of tables that should be in the cloud but remain on a local copy, leading to data mismatches or slight inefficiencies in integration.
+
+Example: Several non-transactional tables were intended to be fully migrated to the cloud as part of a single migration, but some are still left behind in a local cloud copy. This creates a slight delay in cloud integration, causing data inconsistencies between the cloud system and local copies used for integration or reporting.
+
+Impact: Minor disruptions in reporting or analytics, requiring adjustments but not causing significant issues in overall system functionality.
+
+3. High
+
+Justification: A significant policy violation that impacts essential parts of the architecture, such as cloud-native integration, data synchronization, or operational integrity. This type of violation compromises real-time data access or performance.
+
+Example: Key transactional or customer-related tables (e.g., order details or inventory data) are left behind in the local copy while other data is migrated to the cloud. This leads to real-time data inconsistencies, affecting system operations such as customer transactions, order fulfillment, or service delivery. Cloud integration cannot operate optimally due to the missing critical data in the cloud.
+
+Impact: Disruption to key business processes like order processing or customer service, requiring urgent corrective action to realign with the cloud architecture.
+
+4. Critical
+
+Justification: A severe violation of architecture principles that causes a fundamental breakdown in the cloud system's ability to meet business needs. The architecture is significantly compromised, leading to operational failure, security risks, or severe compliance issues.
+
+Example: Entire sets of critical operational tables (e.g., payroll, financial records, or user authentication) are missed during migration and are left as local copies. The cloud architecture is now incomplete, leading to system failures or inability to process core functions like payroll or customer account management, resulting in financial loss or significant operational downtime.
+
+Impact: Complete breakdown of business-critical functions, causing major operational disruption and potential financial or legal risks. Immediate remediation is necessary to restore the system’s functionality.
+
 =============================================================================================================================================================================================================
 =============================================================================================================================================================================================================
 =============================================================================================================================================================================================================
