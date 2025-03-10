@@ -1,1 +1,29 @@
+Justification for Deviation from Divisional Technology Strategy
 
+Low Deviation Justification:
+
+The solution aligns with the divisional technology strategy, leveraging Snowflake as the central cloud data platform.
+Any deviations are minor and temporary, with a clear plan for resolution (e.g., phased migration of remaining tables).
+Follows best practices for cloud adoption, data integration, and security.
+No long-term impact on architectural consistency or target state compliance.
+
+Moderate Deviation Justification:
+
+The majority of the solution follows the divisional technology strategy, but some exceptions exist.
+Temporary local copies of certain tables are maintained in the cloud before full migration to Snowflake.
+Some non-standard integration processes are required, though they do not introduce significant operational risks.
+A roadmap exists to bring the solution fully into compliance, though it may take additional time or resources.
+
+High Deviation Justification:
+
+The project introduces non-strategic components or dependencies that are not aligned with the divisional technology roadmap.
+Local copies or hybrid database solutions are retained long-term, increasing operational complexity.
+The approach creates fragmentation in data access, governance, or security models.
+Additional investments are required to align with divisional strategy, but no immediate resolution is in place.
+
+Critical Deviation Justification:
+
+The project fundamentally contradicts the divisional technology strategy.
+Key architectural principles, such as cloud-first adoption and Snowflake standardization, are not followed.
+Legacy or proprietary solutions are retained, preventing seamless cloud integration.
+No clear plan exists to mitigate the deviation, posing long-term risks to scalability, cost efficiency, and governance.
