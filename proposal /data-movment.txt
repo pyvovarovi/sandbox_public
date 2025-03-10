@@ -121,6 +121,33 @@ Zero Tolerance for Downtime: These systems must operate with high availability, 
 Proactive Risk Management and Security: Investments must be made to ensure continuous operation, including high levels of monitoring, cybersecurity defenses, and scalability. Regular performance optimization and testing are mandatory, along with real-time alerts and proactive response strategies.
 
 ===============================================================================================================================================
+architecture-related policy violation
+
+1. Low Violation
+Justification:
+This category is reserved for minor infractions that have negligible impact on the overall architecture. These violations typically involve small deviations from established guidelines or standards that do not interfere with system stability, security, or functionality. They might be due to oversight, legacy constraints, or an area where the policy does not apply strictly due to specific project requirements.
+
+Examples: Slight deviations in naming conventions, non-critical design inconsistencies, or missed documentation requirements.
+Reasoning: These violations are considered low-priority because they do not pose a risk to the system’s performance or security. They are generally easy to resolve in routine updates or improvements without requiring urgent action.
+2. Moderate Violation
+Justification:
+A moderate violation typically indicates a deviation that could affect the system’s performance, scalability, or security in a limited way. While these violations are not immediately harmful, they could become problematic over time if not addressed. They often arise from a gap in policy understanding, evolving requirements, or trade-offs made during the design or implementation phase.
+
+Examples: Suboptimal use of resources, incomplete integration of new technologies, minor security loopholes that do not present immediate threats.
+Reasoning: The impact of moderate violations, while not critical, could lead to inefficiencies, performance degradation, or potential vulnerabilities if left unaddressed. While not immediately urgent, these violations should be addressed as soon as possible to prevent escalation.
+3. High Violation
+Justification:
+High violations represent significant breaches of architectural policies that can have a direct impact on the performance, scalability, or security of the system. These violations are likely to affect system reliability, increase the risk of failure, or result in the inefficient use of resources. They may stem from technical debt, insufficient adherence to guidelines, or rushed decisions during the development process.
+
+Examples: Poorly optimized data flows, security vulnerabilities that could lead to breaches, integration issues that risk system availability, significant performance bottlenecks.
+Reasoning: High violations pose substantial risks to the organization and the system. While they do not necessarily result in catastrophic failures, they require immediate remediation to prevent service degradation, security breaches, or operational inefficiencies that could affect the business.
+4. Critical Violation
+Justification:
+Critical violations are severe breaches that represent an immediate threat to the overall architecture’s integrity, security, or functionality. These violations could lead to system outages, data breaches, or a total failure of core systems. They may arise from fundamental design flaws, misalignments with the overarching technology strategy, or non-compliance with essential security or regulatory requirements.
+
+Examples: Major security gaps (e.g., improper data encryption or unpatched vulnerabilities), loss of data integrity, system crashes, or failure to meet compliance standards.
+Reasoning: Critical violations represent the most urgent category of issues that demand immediate action to avoid catastrophic consequences. These violations could severely disrupt business operations, damage the organization’s reputation, or lead to financial loss. Addressing them swiftly is paramount to safeguarding the system and the organization's assets.
+
 ===============================================================================================================================================
 ===============================================================================================================================================
 ===============================================================================================================================================
