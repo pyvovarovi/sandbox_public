@@ -186,6 +186,40 @@ Unmanageable Technical Debt: The solution introduces substantial technical debt,
 Long-term Viability: This decision could jeopardize future integrations or make it more difficult to meet evolving business requirements, as the solution does not adhere to the core principles and goals of the divisional target state.
 Example: Implementing a completely unsupported data movement framework or technology that has no integration path with the divisional architecture, severely impacting overall business operations and scalability.
 ===============================================================================================================================================
+deviation from divisional technology strategy
+
+1. Low Deviation
+Justification:
+
+The decision to use an existing data movement framework aligns with the divisional technology strategy, with minimal customization required. The framework is part of or compatible with the existing toolset, and it adheres to the divisional standards for integration, security, and scalability. There are no major changes to the current architecture, and the framework adds functionality that is largely in line with the divisional vision, ensuring continuity and stability in the architecture.
+Example:
+
+An existing data movement framework already adopted across other teams is leveraged, requiring only minor adjustments to meet specific project needs without impacting divisional strategy.
+
+2. Moderate Deviation
+Justification:
+
+The decision introduces some degree of deviation from the divisional technology strategy. While the framework or custom solution is largely compatible with divisional standards, it may require adjustments or additional features that are outside of the current preferred stack. There may be some trade-offs made in terms of integration or compatibility with other systems, but these can be managed with additional effort. The solution remains largely within the bounds of the technology strategy, though it requires some flexibility.
+Example:
+
+Using a data movement framework that is not fully adopted by the division, but is still based on widely accepted technologies. Custom integrations or slight architectural shifts may be necessary, but the impact is manageable and aligns with broader divisional principles.
+
+3. High Deviation
+Justification:
+
+The decision introduces significant changes to the divisional technology strategy. The custom solution or selected framework may not align well with the broader divisional architecture, leading to potential risks in integration, compatibility, or long-term scalability. While it solves an immediate problem, it may result in a more fragmented architecture or introduce challenges that will require additional resources to maintain. The deviation could disrupt the overall divisional strategy if similar decisions are made across other projects.
+Example:
+
+Building a custom data movement utility that requires significant effort to integrate with existing systems or using a framework that doesn’t adhere to divisional standards for security, scalability, or cloud-first strategies. This may create complexity in managing dependencies, ongoing updates, or long-term compatibility.
+
+4. Critical Deviation
+Justification:
+
+The decision represents a major departure from the divisional technology strategy, potentially jeopardizing the coherence of the architecture, security, or scalability goals. The selected framework or custom solution is incompatible with key divisional principles or long-term technology direction. It may introduce significant risks to system performance, maintainability, or the ability to scale. This kind of deviation may lead to a fragmented and unsustainable technology landscape that complicates future integration, support, or growth. A critical deviation might require significant rework down the line to realign the architecture.
+Example:
+
+Building a custom data movement solution that relies on outdated, unsupported technologies or a framework that is incompatible with the divisional cloud-first strategy, security standards, or data governance policies. Such a decision could result in a fragmented architecture that is difficult to support and scale, with long-term consequences for alignment with the divisional vision.
+
 ===============================================================================================================================================
 ===============================================================================================================================================
 ===============================================================================================================================================
