@@ -221,6 +221,36 @@ Example:
 Building a custom data movement solution that relies on outdated, unsupported technologies or a framework that is incompatible with the divisional cloud-first strategy, security standards, or data governance policies. Such a decision could result in a fragmented architecture that is difficult to support and scale, with long-term consequences for alignment with the divisional vision.
 
 ===============================================================================================================================================
+deviation from divisional architecture principles
+
+1. Low Deviation
+Justification:
+
+The chosen solution (whether a framework or custom utility) introduces only minor deviations from the divisional architecture principles. The deviations are within acceptable boundaries and have minimal impact on the long-term viability, scalability, and performance of the architecture.
+The adjustments made to the framework or custom utility are well understood and managed, ensuring that the solution integrates smoothly with existing systems without introducing significant risks or architectural debt.
+The approach aligns with core principles such as maintainability, modularity, and reusability, with only slight trade-offs for speed, cost, or specific functional requirements.
+Example: Minor configuration changes or enhancements to an existing framework that don’t affect overall system integrity or long-term scalability.
+2. Moderate Deviation
+Justification:
+
+The solution requires moderate deviations from the divisional architecture principles. These deviations are necessary to meet specific business or technical requirements but may introduce some additional complexity or require workarounds.
+Some architectural principles might be partially compromised, but these compromises are well-understood, and mitigation strategies are in place to manage any potential issues (e.g., performance optimization, integration complexity).
+The decision has been made with a clear trade-off between speed and flexibility versus long-term maintainability or scalability, with an understanding of the potential future impact on the system architecture.
+Example: A framework is used, but some of its default features are bypassed or heavily customized to fit the immediate needs, resulting in additional overhead in the future.
+3. High Deviation
+Justification:
+
+Significant deviations from divisional architecture principles are required to accommodate the chosen solution. These changes could introduce considerable risks to long-term scalability, performance, or maintainability.
+The decision to go with a solution that deviates heavily from architectural principles might be driven by urgent business needs, but it is understood that it will require substantial remediation or refactoring in the future to align with divisional principles.
+There may be trade-offs in security, reliability, or system integrity that are not ideal but are deemed necessary in the short term.
+Example: Significant custom development or adaptation of an existing framework that breaks key principles of modularity, scalability, or maintainability, or a lightweight utility that doesn’t adhere to long-term system integration standards.
+4. Critical Deviation
+Justification:
+
+The chosen solution introduces critical deviations that fundamentally violate divisional architecture principles. These violations could result in significant risks, such as system instability, security vulnerabilities, or performance bottlenecks.
+The approach taken may create long-term technical debt, making future scalability, integration, and support extremely difficult. There is a high likelihood that the solution will require a complete redesign or extensive remediation to align with the divisional principles at a later stage.
+This level of deviation is only justified if the business need is extremely urgent, with no feasible alternative. Even in these cases, there should be a well-defined plan for addressing the violations in the near future.
+Example: A custom solution or framework that is so misaligned with key principles (such as data consistency, security, or modularity) that it jeopardizes the organization’s ability to scale, maintain, or support the architecture in the future.
 ===============================================================================================================================================
 ===============================================================================================================================================
 ===============================================================================================================================================
