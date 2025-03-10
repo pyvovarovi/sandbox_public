@@ -1,5 +1,67 @@
 ====================================================================================================================================================================================
-Justification for Deviation from Divisional Architecture Principles
+deviation from divisional target state architecture
+
+Low Deviation
+Justification: The migration process is generally aligned with the divisional target architecture but involves minor, acceptable variances due to practical constraints. For example, certain tables are moved in phases, and while they’re initially available as local copies in the cloud, they will eventually be integrated into Snowflake. These adjustments do not significantly impact performance, scalability, or the long-term architecture, and are being addressed in future iterations.
+Examples:
+Some minor adjustments in migration timelines.
+Temporary use of local copies in the cloud that do not cause major performance bottlenecks.
+Minimal schema changes not affecting the overall architecture.
+Moderate Deviation
+Justification: While the overall direction of the migration is aligned with the divisional target architecture, the phased approach introduces some challenges. The delay in full migration of certain tables might introduce potential risks in data consistency and real-time synchronization, but these can be mitigated with careful monitoring and optimization. There might be additional resource allocation or adjustments needed, but it doesn’t fundamentally disrupt the architecture’s core structure.
+Examples:
+Some tables remain as local copies longer than anticipated, potentially leading to performance overhead.
+Temporary architectural decisions (such as syncing between local copies and Snowflake) that might not be fully optimized.
+Additional infrastructure or tools being used to support phased migrations, deviating slightly from the target design.
+
+High Deviation
+Justification: The current migration approach significantly diverges from the divisional target architecture, impacting both system performance and long-term scalability. The use of local copies in the cloud introduces complexity in managing data consistency, and there might be challenges in ensuring that data across different systems remains synchronized effectively. These deviations require immediate attention to avoid potential system instability or alignment issues with the divisional strategy.
+Examples:
+Performance degradation due to suboptimal syncing between local copies and Snowflake.
+Architectural complexity that adds unnecessary overhead or operational risk.
+Delayed or suboptimal migration plan causing disruptions in overall data flow or business operations.
+Critical Deviation
+Justification: The migration approach is severely misaligned with the divisional target architecture, threatening the integrity, performance, and scalability of the entire system. The prolonged use of local copies and delays in migration could lead to significant data integrity issues, sync failures, and operational disruptions. Immediate corrective action is needed to realign with the divisional strategy and avoid catastrophic failure or long-term inefficiencies.
+Examples:
+Critical data consistency issues caused by unsynchronized local copies and Snowflake.
+Major architectural shifts required due to the migration approach, leading to significant delays or system outages.
+Severe operational risk due to lack of clear alignment with the target architecture and strategic goals.
+---------------------------
+Low Deviation
+Justification: The current approach to database migration and integration, while slightly deviating from the divisional target state architecture, is deemed acceptable due to the phased migration strategy. Minor variances include temporary measures such as the use of local copies of tables in the cloud, which will eventually be integrated into Snowflake. These deviations do not present significant risk to overall system performance, scalability, or strategic objectives. The architectural principles remain intact, and the deviations are expected to be addressed in future phases without significant long-term impact.
+Examples:
+The phased migration schedule is slightly delayed but does not pose risks to system performance or data integrity.
+Temporary usage of local copies of data tables, which do not impact the overall architecture or introduce significant latency.
+Minor schema changes or adjustments that don't impact the broader design, such as temporary workarounds to maintain data flow.
+Small deviations in technology stack that are acceptable and won’t affect the divisional target state in the long run.
+Temporary solutions for interoperability between migrated and non-migrated tables that align with best practices and can be refined post-migration.
+Moderate Deviation
+Justification: The phased migration strategy introduces noticeable but manageable deviations from the divisional target state architecture. While the system remains functional, there are challenges related to the management of data consistency, synchronization, and performance, which may become more pronounced as the system scales. The architecture is deviating in some areas, especially with the prolonged use of local copies of tables in the cloud. These challenges require adjustments, resource allocation, and possibly new tools or processes to bring the architecture back in line with the target state. Though they don’t pose an immediate risk, these deviations should be addressed within a reasonable timeframe to ensure long-term alignment with the divisional strategy.
+Examples:
+The extended use of local copies of data introduces some challenges in terms of performance and consistency, leading to a potential lag in real-time data updates.
+Data synchronization and integration tools are required to handle differences between local copies and Snowflake, adding complexity to the system.
+Increased resource allocation (e.g., cloud storage or compute power) to support the phased migration approach, slightly deviating from the target architecture.
+Certain architectural decisions that temporarily diverge from the divisional strategy, such as the reliance on manual syncing methods or non-ideal cloud infrastructure solutions.
+Temporary modifications to the database schema or design patterns that don’t fully adhere to divisional standards but do not introduce major risk.
+High Deviation
+Justification: The migration process is facing significant deviation from the divisional target state architecture, and these issues need to be addressed to avoid compromising the system’s performance, scalability, and alignment with strategic goals. The use of local copies for extended periods is leading to increased complexity in data consistency management, real-time syncing, and operational overhead. The increased resource demand for handling inconsistent data across systems and the challenges introduced by mismatched architectures require immediate remediation. At this level, corrective actions should be taken promptly to prevent performance degradation, unnecessary risk, and misalignment with the long-term goals of the organization.
+Examples:
+Data consistency issues are becoming more frequent, with synchronization delays and discrepancies between local copies and Snowflake, affecting the reliability of data.
+The need for additional tools or custom-built solutions to manage complex synchronization between local and cloud-based tables, causing increased operational costs and resource usage.
+Significant performance degradation during peak workloads due to suboptimal architecture or integration processes, making it harder to meet business demands and service level agreements (SLAs).
+Prolonged use of non-target architecture, such as maintaining local copies of tables in the cloud indefinitely, instead of fully integrating them into Snowflake, potentially introducing more points of failure.
+Increased operational risks and manual intervention due to a lack of automation in the syncing process, leading to inefficiencies in data flow and potential service interruptions.
+Critical Deviation
+Justification: The current state of the database migration represents a severe deviation from the divisional target state architecture, posing immediate risks to the stability, performance, and security of the entire system. The use of local copies, delays in full migration to Snowflake, and the resulting data inconsistency are significantly hindering the efficiency of the architecture. These critical issues have the potential to disrupt business operations, compromise data integrity, and result in significant operational risks. Immediate action is required to realign the architecture with the divisional target state to prevent potential system outages, data breaches, or long-term inefficiencies. This situation demands urgent corrective action, which may involve revisiting the migration strategy, reconsidering architectural decisions, and potentially overhauling the cloud infrastructure to ensure alignment with organizational goals.
+Examples:
+Data Integrity Risk: Persistent synchronization failures or discrepancies between local copies and Snowflake are causing data corruption or unreliable reporting. This compromises the trust in the data across the organization and risks business-critical decisions being made on faulty information.
+Performance and Availability Issues: Major performance issues are arising from the lack of full integration between cloud-based and local copies of tables, severely impacting system responsiveness and availability during peak usage, leading to downtime or degraded user experience.
+Severe Architecture Misalignment: The architectural decisions made for the migration process (e.g., continued use of local copies, non-standard cloud configurations) are causing the system to diverge too far from the divisional target, making it difficult to integrate new technologies or meet scalability demands as the business grows.
+Operational Disruptions: Increased reliance on manual processes to sync data or maintain local copies is leading to a high degree of manual intervention, frequent errors, and unexpected outages, impacting business continuity.
+Security and Compliance Risks: Potential security vulnerabilities arise due to inconsistent data storage methods, creating challenges with data governance, privacy regulations, and compliance audits, especially if data across environments is not properly secured or synchronized.
+
+====================================================================================================================================================================================
+Deviation from Divisional Architecture Principles
 
 1. Low Deviation 
 Definition: Minor deviations that do not significantly impact architectural integrity, security, or operational efficiency.
