@@ -1,0 +1,44 @@
+====================================================================================================================================================================
+Economic impact, internal technology investment
+
+1. Low
+Economic Impact: Minimal cost implications; the project has little to no effect on operational budgets.
+Internal Technology Investment: Uses existing tools and infrastructure with no significant additional investment.
+Justification:
+Leverages open-source or already licensed technologies.
+Minor impact on ongoing operations or revenue streams.
+No significant infrastructure, licensing, or personnel costs.
+2. Moderate
+Economic Impact: Noticeable but manageable costs; potential for moderate efficiency gains or operational savings.
+Internal Technology Investment: Requires some additional technology investments (e.g., minor cloud storage costs, middleware, or automation tools).
+Justification:
+Improves operational efficiency and data management.
+Requires investment in cloud storage, APIs, or minor tooling.
+Some level of staff training or reallocation of resources is needed.
+3. High
+Economic Impact: Significant financial implications; either through high upfront investment or potential cost savings.
+Internal Technology Investment: Requires purchasing/licensing new tools, substantial cloud infrastructure, or dedicated team efforts.
+Justification:
+Large-scale data migration with high processing/storage costs.
+Requires dedicated cloud services (e.g., Snowflake compute costs).
+May need third-party integration, ETL pipelines, or managed services.
+4. Critical
+Economic Impact: Business-critical financial implications; failure or success has a direct effect on revenue, regulatory compliance, or competitive advantage.
+Internal Technology Investment: Requires a major, long-term strategic investment in cloud infrastructure, data platforms, and skilled personnel.
+Justification:
+Essential for regulatory compliance or business continuity.
+Involves large-scale restructuring of data architecture.
+High compute, storage, and data processing costs with ongoing maintenance.
+Direct impact on business revenue, customer experience, or risk management.
+
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
