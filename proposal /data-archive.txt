@@ -249,6 +249,13 @@ Justification:
 A significant portion of the architecture involves non-standard components or approaches, which deviate from divisional architecture principles.
 This might involve using non-recommended data formats, relying on unsupported or custom APIs, or creating complex and bespoke integrations between MongoDB and Snowflake that risk long-term maintainability and scalability.
 Example: Storing data in a non-compliant storage format, using external services (e.g., MongoDB Atlas or other cloud-managed services) that aren’t aligned with divisional standards, or creating a non-standard data pipeline without proper integration with existing infrastructure tools.
+
+4. Critical Deviation
+Justification:
+
+The solution fundamentally violates divisional architecture principles, potentially causing long-term risks to scalability, security, or compliance.
+This could involve the use of unsupported technologies, non-compliant data formats, or technologies that don’t align with the cloud-first or security standards of the organization.
+Example: Attempting to integrate MongoDB with Snowflake without leveraging Snowflake’s JSON capabilities or using unsupported data storage systems for archiving (e.g., storing MongoDB data in a non-compliant cloud storage solution) could have a direct impact on data integrity, accessibility, or regulatory compliance.
 ====================================================================================================================================================================
 ====================================================================================================================================================================
 ====================================================================================================================================================================
