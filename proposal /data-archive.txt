@@ -32,10 +32,223 @@ High compute, storage, and data processing costs with ongoing maintenance.
 Direct impact on business revenue, customer experience, or risk management.
 
 ====================================================================================================================================================================
+"IT technology dependancy
+
+IT Technology Dependency Justification
+1. Low Dependency
+Definition:
+
+The technology is non-essential to core business operations.
+Its failure or removal has minimal to no impact on business continuity.
+Justification Criteria:
+
+Alternative solutions or workarounds exist without significant cost or effort.
+Used primarily for non-critical tasks, internal experiments, or low-importance workflows.
+No significant vendor lock-in or reliance on proprietary technology.
+Example:
+
+Internal productivity tools (e.g., document collaboration, note-taking apps).
+Non-core reporting dashboards with minimal impact on decision-making.
+2. Moderate Dependency
+Definition:
+
+The technology supports important business processes but is not mission-critical.
+Downtime may cause inconvenience but will not severely disrupt operations.
+Justification Criteria:
+
+Has a partial redundancy or alternative solution available.
+Temporary failure may cause operational inefficiencies but not financial or reputational damage.
+Migration or replacement is feasible with moderate effort.
+Example:
+
+Middleware components that support analytics but don’t directly impact operations.
+Internal CI/CD pipelines used for deployments but not affecting live systems.
+3. High Dependency
+Definition:
+
+The technology is integral to business operations, and failures will significantly impact productivity, revenue, or security.
+Has limited redundancy, making failures difficult to mitigate.
+Justification Criteria:
+
+Business continuity depends on its stability and availability.
+High integration with other critical systems, making replacement complex.
+Vendor or ecosystem lock-in exists, requiring careful risk management.
+Example:
+
+Core ERP (Enterprise Resource Planning) modules for finance, HR, or procurement.
+Primary cloud storage for production workloads.
+Authentication and identity management systems (e.g., Single Sign-On).
+4. Critical Dependency
+Definition:
+
+The technology is fundamental to business survival and revenue generation.
+Failure will cause severe operational, financial, or reputational damage.
+Justification Criteria:
+
+No feasible workarounds or redundancy in place.
+Failure results in legal, compliance, or security risks.
+Migration or replacement would be high-risk and complex.
+Example:
+
+Primary transactional databases handling customer orders/payments.
+Cloud infrastructure hosting mission-critical applications.
+Core networking and security infrastructure (e.g., firewalls, VPNs).
 ====================================================================================================================================================================
+architecture-related policy violation
+
+Justification for Architecture-Related Policy Violation Levels
+1. Low Violation
+Definition: Minor deviations from established architecture policies that have minimal impact on system integrity, scalability, security, or performance. These violations are typically temporary or easily mitigated.
+
+Examples:
+
+Using a non-standard but functionally equivalent component that does not introduce risks.
+Minor non-compliance with naming conventions or documentation standards.
+Slight deviations from best practices that do not impact system behavior.
+Justification for Level:
+
+No significant technical debt or long-term impact.
+Can be corrected with minimal effort and within regular development cycles.
+No impact on security, compliance, or business continuity.
+2. Moderate Violation
+Definition: More noticeable deviations from architectural policies that may introduce moderate risks, inefficiencies, or potential long-term issues. These violations may require additional resources to resolve but do not immediately threaten system stability.
+
+Examples:
+
+Use of deprecated technology that is still operational but not recommended.
+Architectural patterns that hinder scalability but do not currently impact performance.
+Moderate security risks that can be mitigated with additional controls.
+Partial non-compliance with technology standards that require additional monitoring.
+Justification for Level:
+
+Some impact on maintainability, scalability, or security, but manageable.
+Requires additional effort to align with architectural policies.
+May cause operational inefficiencies but does not disrupt critical business functions.
+3. High Violation
+Definition: Significant deviations from architecture policies that introduce serious risks, hinder system performance, or create security vulnerabilities. These require immediate attention to avoid major disruptions.
+
+Examples:
+
+Use of unsupported or non-compliant technologies in production environments.
+Lack of necessary security measures (e.g., missing encryption for sensitive data).
+Major deviations from approved integration patterns, leading to instability.
+Non-compliance with data governance or regulatory requirements.
+Justification for Level:
+
+High risk of operational disruptions, security breaches, or performance bottlenecks.
+Requires urgent remediation to prevent long-term damage.
+May lead to compliance violations, impacting legal and regulatory standing.
+4. Critical Violation
+Definition: Severe violations that pose an immediate and unacceptable risk to system integrity, security, compliance, or business continuity. These violations require urgent remediation, potentially leading to a system rollback or shutdown if not addressed.
+
+Examples:
+
+Exposure of sensitive data due to non-compliant security practices.
+Use of unauthorized third-party systems that compromise security or data integrity.
+Fundamental violations of architectural principles that lead to major outages.
+Non-compliance with legal or regulatory mandates, resulting in financial penalties or legal actions.
+Justification for Level:
+
+Immediate threat to business operations, security, or compliance.
+Could cause financial, reputational, or legal consequences.
+Requires emergency response, potentially leading to system rollback or re-architecture.
+
 ====================================================================================================================================================================
+deviation from divisional target state architecture
+
+Justification for Deviation from Divisional Target State Architecture
+1. Low Deviation
+Definition: Minor misalignment with target architecture, but does not impact long-term strategic goals.
+
+Justification:
+
+Temporary workaround required due to an ongoing migration or integration phase.
+A non-critical system component requires custom implementation due to vendor constraints.
+A short-term deviation necessary to maintain business continuity while transitioning to target architecture.
+The cost of immediate compliance outweighs the benefits, but alignment is planned.
+2. Moderate Deviation
+Definition: Noticeable misalignment that introduces some risk but is manageable in the medium term.
+
+Justification:
+
+Dependencies on legacy systems that cannot be decommissioned immediately.
+The required technology or architecture standard is not fully supported by a critical third-party vendor.
+Performance or scalability requirements necessitate temporary use of non-standard architecture.
+Budgetary or resource constraints prevent full compliance at this stage.
+The deviation is intentional to enable innovation, but a roadmap exists for alignment.
+3. High Deviation
+Definition: Significant misalignment that poses considerable risk to architecture goals and requires mitigation.
+
+Justification:
+
+Critical business operations rely on a system that cannot be migrated without major disruption.
+Enterprise-wide architecture standards conflict with regulatory or compliance obligations.
+The current architecture does not support required functionality, and an alternative solution must be used.
+Major cost implications prevent immediate alignment, and a phased approach is required.
+Organizational restructuring or acquisitions have led to temporary divergence from standards.
+4. Critical Deviation
+Definition: Fundamental misalignment that threatens the stability, security, or compliance of the IT landscape.
+
+Justification:
+
+Compliance with regulatory frameworks mandates an alternative approach that contradicts divisional target architecture.
+The standard architecture does not support mission-critical requirements, necessitating an exceptional approach.
+An urgent security vulnerability requires immediate deviation to prevent data breaches or operational shutdowns.
+An unavoidable dependency on a proprietary or external system prevents adherence to architectural standards.
+Business survival depends on a unique implementation that conflicts with standard architecture guidelines.
 ====================================================================================================================================================================
+"deviation from divisional technology strategy"
+
+1. Low Deviation:
+Justification:
+
+Minimal Impact on the overall strategy, with only small adjustments required.
+The technology choice does not fully align with divisional standards but does not introduce significant risks or inefficiencies.
+The MongoDB-to-Snowflake approach adheres to key divisional technology guidelines, but with slight variations that can be justified due to business requirements, such as optimizing data transfer speed or leveraging existing integrations that are already in place.
+The change can be addressed with minor updates to infrastructure, minimal additional training, and can be controlled without disrupting ongoing operations.
+2. Moderate Deviation:
+Justification:
+
+Noticeable impact on the overall strategy, but still manageable within the existing framework.
+A clear rationale exists for why the chosen solution does not align fully with divisional standards (e.g., performance optimization, specific compliance or security requirements).
+The MongoDB-to-Snowflake solution may require a specialized integration that does not follow divisional guidelines for cloud migrations or API usage, but it provides significant performance or cost benefits.
+Some additional effort may be needed to integrate this new solution with existing technologies, requiring updates to existing policies or infrastructure.
+3. High Deviation:
+Justification:
+
+Significant impact on the divisional technology strategy and may introduce challenges in maintaining long-term alignment.
+The technology choice may introduce complexities that require major changes in infrastructure, ongoing support, or workflows.
+In the case of MongoDB-to-Snowflake, a non-standard approach to data handling (such as bypassing the standard data transfer protocols or using a customized API solution) might introduce operational challenges, such as inconsistent data formats or dependencies on unsupported technologies.
+This deviation could require specialized skills and increase the effort required for support, maintenance, and troubleshooting.
+4. Critical Deviation:
+Justification:
+
+Severe impact on divisional technology strategy, leading to significant risks or resource overhead.
+The chosen technology diverges so much from divisional standards that it may lead to strategic misalignment, security concerns, operational inefficiencies, or even potential compliance violations.
+For example, a MongoDB-to-Snowflake approach that requires completely custom-built integration components without leveraging divisional cloud storage policies, security practices, or monitoring tools would create serious risks.
+There may be substantial risks to data integrity, security, or performance. The resources required for implementing and maintaining such a deviation would exceed the benefits, making it unsustainable in the long term.
 ====================================================================================================================================================================
+"deviation from divisional architecture principles"
+
+1. Low Deviation
+Justification:
+
+The architecture design closely follows divisional principles, requiring minimal changes.
+Snowflake's support for JSON (via VARIANT) and its native API integration with cloud storage aligns with established best practices.
+Only slight customizations may be needed to accommodate specific data formats from MongoDB, which don’t compromise scalability, maintainability, or security.
+Example: Using Snowflake's COPY INTO for batch loading and ensuring proper transformation of data from MongoDB to a supported JSON format. This solution is in line with cloud-first principles.
+2. Moderate Deviation
+Justification:
+
+The implementation involves some custom components or non-standard tools, which are outside the typical technology stack but still provide a functional solution.
+Although most of the solution utilizes Snowflake’s features (APIs, VARIANT data type), some custom scripts (e.g., for data transformation or orchestration) or third-party tools may be required for seamless integration between MongoDB and Snowflake.
+Example: Introducing a third-party ETL tool or developing custom Python scripts to handle incremental updates between MongoDB and Snowflake might slightly deviate from divisional standards but still delivers a functional solution. It may introduce additional overhead or maintenance complexity.
+3. High Deviation
+Justification:
+
+A significant portion of the architecture involves non-standard components or approaches, which deviate from divisional architecture principles.
+This might involve using non-recommended data formats, relying on unsupported or custom APIs, or creating complex and bespoke integrations between MongoDB and Snowflake that risk long-term maintainability and scalability.
+Example: Storing data in a non-compliant storage format, using external services (e.g., MongoDB Atlas or other cloud-managed services) that aren’t aligned with divisional standards, or creating a non-standard data pipeline without proper integration with existing infrastructure tools.
 ====================================================================================================================================================================
 ====================================================================================================================================================================
 ====================================================================================================================================================================
