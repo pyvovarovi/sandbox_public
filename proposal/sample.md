@@ -1,4 +1,5 @@
 Economic impact, internal technology investment. Low, moderate,  high, critical.
+
 Below is a structured approach that integrates the current scenario, defines evaluation levels, and proposes 10 strategic questions—with examples—to help a business owner justify ratings for both economic impact and internal technology investment.
 
 ---
