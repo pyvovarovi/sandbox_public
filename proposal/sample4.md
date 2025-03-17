@@ -1,3 +1,5 @@
+Below is a structured table that places the four levels (columns) horizontally and the six risk types (rows) vertically. Each cell contains three targeted, technical questions—with an accompanying example—to help you engage with the business owner and justify the assessed level.
+
 ---
 
 | **Type** | **Low** | **Moderate** | **High** | **Critical** |
@@ -10,3 +12,5 @@
 | **Economic Impact, Internal Technology Investment** | - Is the economic impact within forecasted budgets? (e.g., minimal cost variances) <br> - Do current internal investments meet ROI expectations? (e.g., predictable cost recovery) <br> - Are budgetary risks low? (e.g., stable funding sources) | - What moderate cost variances have been observed? (e.g., slight overruns in integration costs) <br> - How might these variances impact future investments? (e.g., potential re‑allocation of funds) <br> - What mitigation strategies are planned? (e.g., budget revisions) | - Which project areas are driving high costs? (e.g., significant overspending on cloud services) <br> - How does this affect the overall investment strategy? (e.g., need to re‑prioritize budgets) <br> - What corrective actions are proposed? (e.g., detailed cost‑control measures) | - What critical economic risks threaten project viability? (e.g., unsustainable cost overruns) <br> - How does this impact long‑term internal investment plans? (e.g., jeopardizes future innovation funding) <br> - What immediate financial interventions are required? (e.g., emergency budget restructuring) |
 
 ---
+
+This table should serve as a comprehensive checklist to discuss and validate the severity levels with business stakeholders, ensuring that technical, strategic, and economic aspects are thoroughly examined.
