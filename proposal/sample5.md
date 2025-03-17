@@ -1,4 +1,3 @@
-Below is a structured table that maps each of the six “types” against four “levels” (Low, Moderate, High, Critical). In each cell you’ll find three example Q&A pairs—questions you might ask a business owner and sample answers—that help justify the assigned level. You can adjust these examples further to suit your organization’s specific context.
 
 ---
 
@@ -13,4 +12,3 @@ Below is a structured table that maps each of the six “types” against four �
 
 ---
 
-Each cell’s Q&A pairs provide a concise justification that a business owner might be asked—and the responses you might offer—to explain why a given scenario is rated at a particular level of deviation, policy violation, dependency, or economic impact. This table should serve as a starting point for discussions around cloud migration and integration initiatives while ensuring alignment with divisional strategies and architecture principles.
