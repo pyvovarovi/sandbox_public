@@ -1,6 +1,3 @@
-Got it! I’ll watch the video and create a detailed article that breaks down the key points and summarizes everything clearly.
-I’ll let you know once it’s ready.
-
 # Platform Engineering: How It Fits into DevOps and Cloud Development
 
 **Platform engineering** is emerging as a pivotal practice in modern software teams, promising to improve developer productivity and streamline operations. As organizations scale their use of cloud services and DevOps practices, many have introduced platform engineering to bridge gaps and reduce complexity. This article provides a comprehensive breakdown of what platform engineering is, why it arose, how it works (especially through Internal Developer Platforms), and how it compares to established roles like DevOps and cloud engineering. We will examine the major points step by step, in a neutral and informative tone.
