@@ -18,7 +18,7 @@ echo.
 
 :: ── Scenario 1: right-click every 10s + jiggle every 3s, 5 moves ─────────────
 echo [1/5] Right-click interval=10s, jiggle interval=3s, 5 moves
-uv run mouse_tools.py --interval 3 --pixels 50 --direction random --count 5 --mouse-right-click-interval 10
+uv run mouse_tools.py --interval 3 --pixels 50 --direction random --count 5 --mouse-right-click-interval 10 --sleep 10
 echo.
 pause
 
@@ -42,10 +42,17 @@ pause
 
 :: ── Scenario 5: directional move — move right only ───────────────────────────
 echo [5/5] Directional: move right 3 times, 1s interval, 8px
-uv run mouse_tools.py --interval 1 --pixels 8 --direction right --count 3 
+uv run mouse_tools.py --interval 1 --pixels 8 --direction right --count 3
+echo.
+pause
+
+:: ── Scenario 6: user-activity sleep — short sleep=10s for demo purposes ───────
+echo [6/6] Activity detection: interval=3s, sleep=10s on user activity
+echo       (move mouse or press a key during the 3s interval to trigger sleep)
+uv run mouse_tools.py --interval 3 --pixels 5 --count 5 --sleep 10
 echo.
 
 echo ============================================================
-echo  All scenarios completed.
+echo  All 6 scenarios completed.
 echo ============================================================
 pause

@@ -11,16 +11,19 @@ Defaults:
   pixels       : 5
   direction    : random
   keep_running : true  (loop forever after count is reached)
+  sleep        : 300 seconds (user-activity sleep duration)
 """
 
 import argparse
 import random
 import sys
+import threading
 import time
 from pathlib import Path
 
 import pyautogui
 import yaml
+from pynput import keyboard
 
 # ── defaults ──────────────────────────────────────────────────────────────────
 DEFAULTS = {
@@ -30,7 +33,21 @@ DEFAULTS = {
     "count": 0,                    # 0 = infinite
     "keep_running": True,          # restart loop after count is reached
     "mouse_right_click_interval": 0,  # 0 = disabled; >0 = seconds between right-clicks
+    "sleep": 300,                  # seconds to sleep when user activity is detected
+    "move_threshold": 10,          # minimum pixels moved to count as user activity
 }
+
+# ── activity detection ─────────────────────────────────────────────────────────
+_key_pressed = threading.Event()
+
+def _on_key_press(_key):
+    _key_pressed.set()
+
+def _start_key_listener() -> keyboard.Listener:
+    listener = keyboard.Listener(on_press=_on_key_press)
+    listener.daemon = True
+    listener.start()
+    return listener
 
 DEFAULT_CONFIG = Path("mouse_config.yaml")
 
@@ -50,7 +67,7 @@ def build_config(args: argparse.Namespace) -> dict:
         cfg.update({k: v for k, v in yaml_cfg.items() if v is not None})
 
     # layer 1: cli overrides
-    for key in ("interval", "pixels", "direction", "count", "mouse_right_click_interval"):
+    for key in ("interval", "pixels", "direction", "count", "mouse_right_click_interval", "sleep", "move_threshold"):
         val = getattr(args, key, None)
         if val is not None:
             cfg[key] = val
@@ -90,6 +107,8 @@ def run(cfg: dict) -> None:
     count           = int(cfg["count"])
     keep_running    = bool(cfg["keep_running"])
     rc_interval     = float(cfg["mouse_right_click_interval"])
+    sleep_duration  = float(cfg["sleep"])
+    move_threshold  = float(cfg["move_threshold"])
 
     mode = "infinite" if count == 0 else f"{count} moves"
     print(f"Mouse jiggler started")
@@ -99,16 +118,44 @@ def run(cfg: dict) -> None:
     print(f"  count                     : {mode}")
     print(f"  keep_running              : {keep_running}")
     print(f"  mouse_right_click_interval: {'disabled' if rc_interval == 0 else f'{rc_interval}s'}")
+    print(f"  sleep (on user activity)  : {sleep_duration}s")
+    print(f"  move_threshold            : {move_threshold}px")
     print("Press Ctrl+C to stop.\n")
 
     pyautogui.FAILSAFE = True  # move mouse to top-left corner to abort
+    _start_key_listener()
 
     moves = 0
     last_rc = time.monotonic() if rc_interval > 0 else None
+    last_pos = pyautogui.position()
     try:
         while True:
+            _key_pressed.clear()
             time.sleep(interval)
-            dx, dy = jiggle(pixels, direction)
+
+            # detect user activity during the sleep
+            cur_pos = pyautogui.position()
+            dist = ((cur_pos.x - last_pos.x) ** 2 + (cur_pos.y - last_pos.y) ** 2) ** 0.5
+            mouse_moved = dist >= move_threshold
+            key_hit = _key_pressed.is_set()
+
+            if mouse_moved or key_hit:
+                reason = "mouse moved" if mouse_moved else "key pressed"
+                print(f"\n  User active ({reason}), sleeping {sleep_duration:.0f}s...", flush=True)
+                time.sleep(sleep_duration)
+                # discard any activity that happened during the sleep — fresh baseline
+                _key_pressed.clear()
+                last_pos = pyautogui.position()
+                print(f"  Resuming.", flush=True)
+                continue
+
+            try:
+                dx, dy = jiggle(pixels, direction)
+            except pyautogui.FailSafeException:
+                print("\n  Fail-safe: mouse at corner, skipping move.", flush=True)
+                last_pos = pyautogui.position()
+                continue
+            last_pos = pyautogui.position()
             moves += 1
 
             # right-click on its own independent timer
@@ -128,8 +175,6 @@ def run(cfg: dict) -> None:
                 moves = 0  # reset counter and loop again
     except KeyboardInterrupt:
         pass
-    except pyautogui.FailSafeException:
-        print("\nFail-safe triggered: mouse moved to a screen corner.")
     print(f"\nStopped after {moves} move(s).")
 
 
@@ -147,6 +192,10 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--no-keep-running",          action="store_true", help="Stop after --count moves instead of looping")
     p.add_argument("--mouse-right-click-interval", type=float, metavar="SEC", dest="mouse_right_click_interval",
                    help="Seconds between right-clicks (0 = disabled)")
+    p.add_argument("--sleep", type=float, metavar="SEC",
+                   help="Seconds to sleep when user activity is detected (default: 300)")
+    p.add_argument("--move-threshold", type=float, metavar="PX", dest="move_threshold",
+                   help="Minimum pixels moved to count as user activity (default: 10)")
     return p.parse_args()
 
 
