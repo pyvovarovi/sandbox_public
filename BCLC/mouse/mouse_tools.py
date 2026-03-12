@@ -128,6 +128,8 @@ def run(cfg: dict) -> None:
                 moves = 0  # reset counter and loop again
     except KeyboardInterrupt:
         pass
+    except pyautogui.FailSafeException:
+        print("\nFail-safe triggered: mouse moved to a screen corner.")
     print(f"\nStopped after {moves} move(s).")
 
 
