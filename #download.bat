@@ -8,7 +8,7 @@ set REPO=pyvovarovi/claude-mouse-tools
 set BRANCH=master
 
 :: List of files to download
-set FILES=mouse_config.yaml mouse_tools.py uv.lock
+set FILES=mouse_config.yaml demo.bat mouse_tools.py pyproject.toml uv.lock
 
 set BASE_URL=https://raw.githubusercontent.com/%REPO%/%BRANCH%
 set ERRORS=0
