@@ -1,0 +1,31 @@
+# mouse_tools.py configuration
+# All values here are overridden by CLI arguments if provided.
+
+# Seconds between each mouse move
+interval: 30
+
+# Pixels to move each jiggle
+pixels: 5
+
+# Direction: random | up | down | left | right
+direction: random
+
+# Number of moves before stopping (0 = infinite)
+count: 0
+
+# If true (default), restart the move counter after reaching count (loop forever).
+# If false, exit after count moves.
+keep_running: true
+
+# Seconds between right-clicks (0 = disabled)
+mouse_right_click_interval: 0
+
+# Seconds to sleep when user activity (mouse move or key press) is detected
+sleep: 300
+
+# Minimum pixels the mouse must move to count as user activity (Euclidean distance)
+move_threshold: 10
+
+# If true (default), move cursor to screen centre when fail-safe corner is triggered.
+# If false, skip the move and leave cursor at the corner.
+corner_recovery: true

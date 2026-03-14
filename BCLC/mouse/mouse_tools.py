@@ -35,6 +35,7 @@ DEFAULTS = {
     "mouse_right_click_interval": 0,  # 0 = disabled; >0 = seconds between right-clicks
     "sleep": 300,                  # seconds to sleep when user activity is detected
     "move_threshold": 10,          # minimum pixels moved to count as user activity
+    "corner_recovery": True,       # move cursor to screen centre when fail-safe corner is hit
 }
 
 # ── activity detection ─────────────────────────────────────────────────────────
@@ -72,9 +73,11 @@ def build_config(args: argparse.Namespace) -> dict:
         if val is not None:
             cfg[key] = val
 
-    # keep_running is a boolean flag — check explicitly
+    # boolean flags — check explicitly
     if getattr(args, "no_keep_running", False):
         cfg["keep_running"] = False
+    if getattr(args, "no_corner_recovery", False):
+        cfg["corner_recovery"] = False
 
     return cfg
 
@@ -109,6 +112,7 @@ def run(cfg: dict) -> None:
     rc_interval     = float(cfg["mouse_right_click_interval"])
     sleep_duration  = float(cfg["sleep"])
     move_threshold  = float(cfg["move_threshold"])
+    corner_recovery = bool(cfg["corner_recovery"])
 
     mode = "infinite" if count == 0 else f"{count} moves"
     print(f"Mouse jiggler started")
@@ -120,6 +124,7 @@ def run(cfg: dict) -> None:
     print(f"  mouse_right_click_interval: {'disabled' if rc_interval == 0 else f'{rc_interval}s'}")
     print(f"  sleep (on user activity)  : {sleep_duration}s")
     print(f"  move_threshold            : {move_threshold}px")
+    print(f"  corner_recovery           : {corner_recovery}")
     print("Press Ctrl+C to stop.\n")
 
     pyautogui.FAILSAFE = True  # move mouse to top-left corner to abort
@@ -152,7 +157,14 @@ def run(cfg: dict) -> None:
             try:
                 dx, dy = jiggle(pixels, direction)
             except pyautogui.FailSafeException:
-                print("\n  Fail-safe: mouse at corner, skipping move.", flush=True)
+                if corner_recovery:
+                    sw, sh = pyautogui.size()
+                    pyautogui.FAILSAFE = False
+                    pyautogui.moveTo(sw // 2, sh // 2, duration=0.3)
+                    pyautogui.FAILSAFE = True
+                    print("\n  Fail-safe: moved cursor to screen centre.", flush=True)
+                else:
+                    print("\n  Fail-safe: mouse at corner, skipping move.", flush=True)
                 last_pos = pyautogui.position()
                 continue
             last_pos = pyautogui.position()
@@ -196,6 +208,8 @@ def parse_args() -> argparse.Namespace:
                    help="Seconds to sleep when user activity is detected (default: 300)")
     p.add_argument("--move-threshold", type=float, metavar="PX", dest="move_threshold",
                    help="Minimum pixels moved to count as user activity (default: 10)")
+    p.add_argument("--no-corner-recovery", action="store_true",
+                   help="Skip corner recovery — leave cursor at corner instead of moving to centre")
     return p.parse_args()
 
 
