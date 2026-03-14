@@ -10,7 +10,7 @@ set BRANCH=master
 :: List of files to download
 set FILES=mouse_config.yaml demo.bat mouse_tools.py pyproject.toml uv.lock
 
-set TARGET_DIR=C:\git\sandbox_public\BCLC\mouse
+set TARGET_DIR=%~dp0BCLC\mouse
 set BASE_URL=https://raw.githubusercontent.com/%REPO%/%BRANCH%
 set ERRORS=0
 
